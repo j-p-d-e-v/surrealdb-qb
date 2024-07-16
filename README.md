@@ -27,7 +27,7 @@ A query builder for SurrealDB that generates DEFINE statements compatible with t
 - [ ] **Namespace**: Implement `DEFINE NAMESPACE` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/namespace)
 - [ ] **Event**: Implement `DEFINE EVENT` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/event)
 - [ ] **Analyzer**: Implement `DEFINE ANALYZER` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/analyzer)
-- [ ] **User**: Implement `DEFINE USER` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/user)
+- [ ] **TOKEN**: Implement `DEFINE USER` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/user)
 - [ ] **User**: Implement `DEFINE TOKEN` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/token)
 
 ## Installation
