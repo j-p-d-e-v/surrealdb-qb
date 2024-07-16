@@ -8,7 +8,7 @@ use surrealdb::sql::statements::DefineIndexStatement;
 /// * `index` - The type of indexing. See: <https://docs.rs/surrealdb/latest/surrealdb/sql/statements/struct.DefineIndexStatement.html>
 /// * `comment` - Comment on the index.
 /// * `if_not_exists` - Create or define the index if not exists.
-#[derive(Debug, Default)]
+#[derive(Debug, Clone, Default)]
 pub struct Index<'a>{
     pub name: &'a str,
     pub table: &'a str,
@@ -20,7 +20,7 @@ pub struct Index<'a>{
 impl <'a> Index<'a> {
     /// # Build a DEFINE Index Statement
     /// ## Parameter
-    /// * `Index` - The `Index` struct.
+    /// * `item` - The `Index` struct.
     pub fn build(
         item: Index
     ) -> Result<String,String> {
@@ -42,13 +42,14 @@ impl <'a> Index<'a> {
     }
 }
 
+
 #[cfg(test)]
 mod tests {
     use super::*;
     use crate::db::Db;
     use crate::builder::table::Table;
     use crate::builder::field::Field;
-    use crate::builder::fields::Fields;
+    use crate::builder::query::Query;
     use crate::builder::prelude::*;
     
     #[tokio::test]
@@ -93,7 +94,7 @@ mod tests {
                         ..Field::default()
                     }
                 ]);
-                match Fields::build(fields) {
+                match Query::new(fields).build() {
                     Ok(stmts) => {
                         assert!(stmts.len()>0);                      
                         assert!(db.client.query(stmts).await.is_ok());

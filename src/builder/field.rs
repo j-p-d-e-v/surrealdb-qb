@@ -13,7 +13,7 @@ use surrealdb::sql::statements::DefineFieldStatement;
 /// * `permissions` - The permissions for select, create, update and delete. Default: Full Permissions.
 /// * `comment` - Comment on the field.
 /// * `if_not_exists` - Create or define the field if not exists.
-#[derive(Debug, Default)]
+#[derive(Debug, Clone, Default)]
 pub struct Field<'a>{
     pub name: &'a str,
     pub table: &'a str,
@@ -27,7 +27,7 @@ pub struct Field<'a>{
     pub comment: &'a str,
     pub if_not_exists: bool,
 }
-impl <'a> Field<'a> {
+impl<'a> Field<'a> {
     /// # Build a DEFINE FIELD Statement
     /// ## Parameter
     /// * `item` - The `Field` struct.

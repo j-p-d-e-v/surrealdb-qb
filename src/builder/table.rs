@@ -3,7 +3,7 @@ use surrealdb::sql::statements::DefineTableStatement;
 use surrealdb::sql::TableType;
 use surrealdb::sql::Relation;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum TableKind {
     Any,
     Normal,
@@ -30,7 +30,7 @@ impl Default for TableKind {
 /// * `relation_out` - Only applicable if `TableKind` enum is `TableKind::Relation`. Set to the outgoing table.
 /// * `if_not_exists` - Create or define the table if not exists.
 /// * `view` - The query to execute as a the view of the table.  See: <https://surrealdb.com/docs/surrealdb/surrealql/statements/define/table#pre-computed-table-views>
-#[derive(Debug, Default)]
+#[derive(Debug, Clone, Default)]
 pub struct Table<'a>{
     pub name: &'a str,
     pub kind: TableKind,
@@ -110,31 +110,8 @@ mod tests {
     use crate::builder::prelude::*;
 
 
-    //#[test]
-    //fn test_table() {
-    //    use surrealdb::sql::Table;
-    //    use surrealdb::sql::Relation;
-    //    let mut relation: Relation = Relation::default();
-    //    relation.from = Some(
-    //        Kind::Record(
-    //            vec![
-    //                Table::from("test123".to_string())
-    //            ] 
-    //        )
-    //    );
-    //    relation.to = Some(
-    //        Kind::Record(
-    //            vec![
-    //                Table::from("test123".to_string())
-    //            ] 
-    //        )
-    //    );
-    //    println!("{:?}",relation);
-    //    println!("{}",Table::from("test123".to_string()));
-    //}
-    
     #[tokio::test]
-    async fn test_build(){
+    async fn test_table(){
         let db = Db::new("127.0.0.1:6080","root","root","test","test").await;
         // Expecting Success
         match Table::build(Table {       
