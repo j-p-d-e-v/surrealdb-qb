@@ -23,7 +23,7 @@ A query builder for SurrealDB that generates DEFINE statements compatible with t
 ## To-Do Checklist
 
 - [ ] **Function**: Implement `DEFINE FUNCTION` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/function)
-- [ ] **Database**: Implement `DEFINE TOKEN` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/database)
+- [ ] **Database**: Implement `DEFINE DATABASE` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/database)
 - [ ] **Namespace**: Implement `DEFINE NAMESPACE` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/namespace)
 - [ ] **Event**: Implement `DEFINE EVENT` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/event)
 - [ ] **Analyzer**: Implement `DEFINE ANALYZER` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/analyzer)
