@@ -106,7 +106,7 @@ impl<T> Query<T> {
     ///         assert!(stmts.len()>0);                      
     ///         assert!(db.client.query(stmts).await.is_ok());
     ///     }
-    ///     _ => assert!(false,"Expecting table queries")
+    ///     _ => assert!(false,"Expecting param queries")
     /// }
     /// ```
     pub fn new(items: Vec<T>) -> Self {
@@ -403,7 +403,7 @@ mod test {
                 assert!(stmts.len()>0);                      
                 assert!(db.client.query(stmts).await.is_ok());
             }
-            _ => assert!(false,"Expecting table queries")
+            _ => assert!(false,"Expecting param queries")
         }
     }
 }
