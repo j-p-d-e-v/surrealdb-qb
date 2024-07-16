@@ -31,6 +31,7 @@ A query builder for SurrealDB that generates DEFINE statements compatible with t
 - [ ] **Token**: Implement `DEFINE TOKEN` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/define/token)
 - [ ] **Relate**: Implement `RELATE` statements. [Documentation](https://surrealdb.com/docs/surrealdb/surrealql/statements/relate)
 
+... and [Other Statements](https://surrealdb.com/docs/surrealdb/surrealql/statements/)
 
 ## Installation
 
